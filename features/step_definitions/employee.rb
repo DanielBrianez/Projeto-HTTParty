@@ -1,9 +1,9 @@
 Dado('que o usuario consulte informacoes de funcionario') do
-  @get_url = 'https://dummy.restapiexample.com/api/v1/employees'
+  @getlist = Employee_Requests.new
 end
   
 Quando('ele realizar a pesquisa') do
-  @list_employee = HTTParty.get(@get_url)
+  @list_employee = @getlist.find_employee
 end
   
 Entao('uma lista de funcionarios deve retornar') do
@@ -12,47 +12,37 @@ Entao('uma lista de funcionarios deve retornar') do
 end
 
 Dado('que o usuario cadastre um novo usuario') do
-  @post_url = 'https://dummy.restapiexample.com/api/v1/create'
+  @create = Employee_Requests.new
+  @assert = Assertions.new
+  @name = Faker::Name.name
+  @salary = Faker::Number.number
+  @age = Faker::Number.number(digits: 2)
+  puts @name
+  puts @salary
+  puts @age
 end
 
 Quando('ele enviar as informacoes do funcionario') do
-  @create_employee = HTTParty.post(@post_url, :headers => {'Content-Type': 'application/json'}, body:{
-    "id": 25,
-    "employee_name": "Fake person",
-    "employee_salary": 25000,
-    "employee_age": 30,
-    "profile_image": ""
-  }.to_json)
-
-  puts(@create_employee)
+  @create_employee = @create.create_employee(@name, @salary, @age)
+  puts @create_employee
 end
 
 Entao('esse funcionario sera cadastrado') do
-  expect(@create_employee.msg).to eql ('OK')
-  expect(@create_employee.code).to eql (200)
+  @assert.request_success(@create_employee.code, @create_employee.message)
   expect(@create_employee["status"]).to eql 'success'
   expect(@create_employee["message"]).to eql 'Successfully! Record has been added.'
-  expect(@create_employee['data']["employee_name"]).to eql 'Fake person'
-  expect(@create_employee['data']["employee_salary"]).to eql (25000)
-  expect(@create_employee['data']["employee_age"]).to eql (30)
+  expect(@create_employee['data']["employee_name"]).to eql @name
+  expect(@create_employee['data']["employee_salary"]).to eql @salary
+  expect(@create_employee['data']["employee_age"]).to eql @age
 end
 
 Dado('que o usuario altere uma informacao de um funcionario') do
-  @get_employee = HTTParty.get('https://dummy.restapiexample.com/api/v1/employees', :headers => {'Content-Type': 'application/json'})
-  puts @get_employee ['data'][0]['id']
-  @put_url = 'https://dummy.restapiexample.com/api/v1/update/' + @get_employee['data'][0]['id'].to_s
+  @request = Employee_Requests.new
 end
 
 Quando('ele enviar as novas informacoes') do
-  @update_employee = HTTParty.put(@put_url, :headers => {'Content-Type': 'application/json'}, body:{
-    "id": 25,
-    "employee_name": "Another Fake person",
-    "employee_salary": 35000,
-    "employee_age": 40,
-    "profile_image": ""
-  }.to_json)
-
-  puts(@update_employee)
+  @update_employee = @request.update_employee(@request.find_employee ['data'][0]['id'], 'Another Fake person', 35000, 40)
+  puts @update_employee
 end
 
 Entao('as informacoes serao alteradas') do
@@ -66,12 +56,12 @@ Entao('as informacoes serao alteradas') do
 end
 
 Dado('que o usuario queira deletar um funcionario') do
-  @get_employee = HTTParty.get('https://dummy.restapiexample.com/api/v1/employees', :headers => {'Content-Type': 'application/json'})
-  @delete_url = 'https://dummy.restapiexample.com/api/v1/delete/' + @get_employee['data'][0]['id'].to_s
+  @getlist = Employee_Requests.new
+  @delete_url = '/delete/' + @get_employee['data'][0]['id'].to_s
 end
 
 Quando('ele enviar a identificacao unica') do
-  @delete_employee = HTTParty.delete(@delete_url, :headers => {'Content-Type': 'application/json'})
+  @delete_employee = request.delete_employee(@request.find_employee['data'][0]['id'])
   puts (@delete_employee)
 end
 
