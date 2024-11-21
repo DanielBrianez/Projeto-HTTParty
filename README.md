@@ -1,5 +1,6 @@
 [PT-BR]
 Projeto de Estudo com HTTParty
+
 Este projeto foi desenvolvido com o objetivo de aprofundar o conhecimento na gem HTTParty. Durante o desenvolvimento, foram adquiridas as seguintes habilidades:
 
 GIT: Criação de repositório, adição de arquivos, controle de versionamento e gerenciamento de branches.
@@ -17,6 +18,7 @@ LinkedIn: [Daniel Nascimento](https://www.linkedin.com/in/daniel-nascimento-2729
 
 [EN-US]
 HTTParty Study Project
+
 This project was created to study the HTTParty gem. Throughout the development, the following skills were honed:
 
 GIT: Creating a repository, adding files, version control, and branch management.
