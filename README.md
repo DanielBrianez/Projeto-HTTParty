@@ -33,3 +33,10 @@ The Dummy API used might be unavailable, which could cause test failures. Check 
 To get more details about the project, follow me on social:
 Instagram: [Daniel Nascimento](https://www.instagram.com/danthedev11/#)
 LinkedIn: [Daniel Nascimento](https://www.linkedin.com/in/daniel-nascimento-2729941a8/)
+
+Documentation:
+
+Httparty: https://www.rubydoc.info/github/jnune...
+Cucumber: https://cucumber.io/docs/cucumber/
+RSpec: https://rspec.info/documentation/
+Gem Faker: https://github.com/faker-ruby/faker
