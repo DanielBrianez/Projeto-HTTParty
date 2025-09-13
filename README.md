@@ -1,42 +1,80 @@
-[PT-BR]
-Projeto de Estudo com HTTParty
+# 📚 Projeto de Estudo com HTTParty  
 
-Este projeto foi desenvolvido com o objetivo de aprofundar o conhecimento na gem HTTParty. Durante o desenvolvimento, foram adquiridas as seguintes habilidades:
+![Ruby](https://img.shields.io/badge/Ruby-3.x-red?style=flat-square&logo=ruby)  
+![HTTParty](https://img.shields.io/badge/HTTParty-Study-blue?style=flat-square)  
+![Status](https://img.shields.io/badge/status-ativo-brightgreen?style=flat-square)  
+![Licença](https://img.shields.io/badge/license-MIT-green?style=flat-square)  
 
-GIT: Criação de repositório, adição de arquivos, controle de versionamento e gerenciamento de branches.
-Cucumber: Criação de chaves, escrita de BDDs (Behavior-Driven Development) e documentação.
-HTTParty: Realização de requisições GET, POST, PUT e DELETE, e manipulação de dados.
-RSpec: Análise de dados e validação dos resultados esperados.
-Ruby: Compreensão da sintaxe, instalação de gems e organização de arquivos.
+Projeto desenvolvido com o objetivo de aprofundar o conhecimento na **gem HTTParty** e no ecossistema de testes automatizados em Ruby.  
 
-Observações
-A API Dummy utilizada pode estar indisponível, resultando em possíveis falhas nos testes. Verifique o link abaixo antes de iniciar os testes: [API Dummy](https://dummy.restapiexample.com/api/v1/employees)
+## 🚀 Tecnologias e Ferramentas Utilizadas  
+- 🖇 **GIT** → Criação de repositório, versionamento, gerenciamento de branches  
+- 🥒 **Cucumber** → Escrita de BDDs (Behavior-Driven Development) e documentação  
+- 🌐 **HTTParty** → Requisições **GET, POST, PUT, DELETE** e manipulação de dados  
+- ✅ **RSpec** → Validação de respostas e análise de dados  
+- 💎 **Ruby** → Sintaxe, instalação de gems e organização de arquivos  
+- 🎭 **Faker** → Geração de dados dinâmicos para testes  
 
-Para mais detalhes sobre o projeto, siga-me nas redes sociais:
-Instagram: [Daniel Nascimento](https://www.instagram.com/danthedev11/#)
-LinkedIn: [Daniel Nascimento](https://www.linkedin.com/in/daniel-nascimento-2729941a8/)
+## ⚠️ Observações  
+A **API Dummy** utilizada pode estar **indisponível**, resultando em falhas nos testes.  
+🔗 [Verifique o status da API antes de executar os testes](https://dummyapi.io/)  
 
-[EN-US]
-HTTParty Study Project
+## 🔧 Como Executar o Projeto  
 
-This project was created to study the HTTParty gem. Throughout the development, the following skills were honed:
+### 1️⃣ Pré-requisitos  
+- [Ruby](https://www.ruby-lang.org/) instalado (versão 3.x ou superior)  
+- Bundler instalado:  
+```bash
+gem install bundler
+````
 
-GIT: Creating a repository, adding files, version control, and branch management.
-Cucumber: Key creation, BDD writing, and documentation.
-HTTParty: Handling GET, POST, PUT, and DELETE requests, as well as data manipulation.
-RSpec: Data analysis and expected results validation.
-Ruby: Syntax, gem installation, and file organization.
+### 2️⃣ Clonar o Repositório
 
-Notes
-The Dummy API used might be unavailable, which could cause test failures. Check the link below before starting the tests: [Dummy API](https://dummy.restapiexample.com/api/v1/employees)
+```bash
+git clone https://github.com/seu-usuario/httpparty-study.git
+cd httpparty-study
+```
 
-To get more details about the project, follow me on social:
-Instagram: [Daniel Nascimento](https://www.instagram.com/danthedev11/#)
-LinkedIn: [Daniel Nascimento](https://www.linkedin.com/in/daniel-nascimento-2729941a8/)
+### 3️⃣ Instalar Dependências
 
-Documentation:
+```bash
+bundle install
+```
 
-Httparty: https://www.rubydoc.info/github/jnune...
-Cucumber: https://cucumber.io/docs/cucumber/
-RSpec: https://rspec.info/documentation/
-Gem Faker: https://github.com/faker-ruby/faker
+### 4️⃣ Executar Testes
+
+```bash
+cucumber
+```
+
+ou
+
+```bash
+rspec
+```
+
+## 📌 Habilidades Desenvolvidas
+
+✅ **Versionamento de código com GIT**
+✅ **Escrita de BDDs com Cucumber**
+✅ **Requisições HTTP com HTTParty (GET/POST/PUT/DELETE)**
+✅ **Validação de respostas com RSpec**
+✅ **Organização e boas práticas em Ruby**
+
+## 📖 Documentação
+
+* [HTTParty](https://www.rubydoc.info/github/jnunemaker/httparty)
+* [Cucumber](https://cucumber.io/docs/cucumber/)
+* [RSpec](https://rspec.info/documentation/)
+* [Faker](https://github.com/faker-ruby/faker)
+
+## 🌍 Conecte-se Comigo
+
+* 📸 [Instagram – Daniel Nascimento](https://www.instagram.com/dan_the_dev/)
+* 💼 [LinkedIn – Daniel Nascimento](https://www.linkedin.com/in/daniel-nascimento)
+
+---
+
+> 🧪 **Dica:** Para simular cenários mais realistas, você pode alterar os endpoints e payloads de teste para trabalhar com outras APIs abertas.
+
+```
